@@ -1,10 +1,10 @@
 // app.test.js
 
-import { request } from "supertest";
-import { app } from "./app.js";
+const request = require("supertest");
+const { app } = require("./app.js");
 
 describe("GET /", () => {
-    it("should return Welcome to App", async () => {
+    it("should return 'Welcome to App'", async () => {
         const res = await request(app).get('/');
         expect(res.statusCode).toBe(200);
         expect(res.text).toEqual("Welcome to App");
